@@ -3,9 +3,7 @@
 # Infrared Small and Dim Target Detection
 
 *Our implements contain two parts ： SDDNet and IC-Module.*  
-
 *SDDNet: Small and Dim Object Detection. Using segmentation pictures as the labels.*  
-
 *IC-Module: Inter-frame correlation Module. Using the inter-frame correlation information aim to reduce the false alarm rate.*  
 
 ## Environments
@@ -26,7 +24,9 @@ python SDD_test.py  --data_path (image to inference)  --load_model  (trained mod
 python IC_test.py  --data_path (image to inference)  --load_model  (trained model)    
 ```
 And the result will be saved in ```test_result/SDD``` or ```test_result/IC``` folder if not specified.  
-**More parameters:**      
+
+**More parameters:**  
+
 　　--save_path : path to save result.  
 　　--acc : if True, use tensorRT to accelerate inference.  
 ## Training
@@ -41,6 +41,7 @@ python -m torch.distributed.launch --nproc_per_node 4 IC_train.py --data_path  (
 And the trained model will be saved in sdd_checkpoints or ic_checkpoints folder if not specified.  
 
 **More Parameters:**  
+
 　　--save_path : path to save checkpoints.  
 　　--vis : whether to visualize, default True.　  
 　　--load_model : path to load pre-trained model.  
